@@ -7,8 +7,12 @@ interface PropTypes {
 }
 
 export default function ToDo({todo}: PropTypes) {
-
     return (
-        <li className={todo.completed ? styles.completed : ''}>{todo.title}</li>
+        <li className={todo.completed ? styles.completed : ''}>
+            <label className={styles.todoContainer}> {todo.title}
+                <input type="checkbox" className={styles.todoCheckbox} checked={todo.completed}/>
+                <span className={styles.todoCheckmark}></span>
+            </label>
+        </li>
     )
 }
