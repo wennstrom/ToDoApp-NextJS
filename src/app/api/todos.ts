@@ -1,6 +1,6 @@
 import { ToDo } from "../entities/todo";
 
-const toDos = [
+let toDos = [
     {id: 1, title: 'groceries', completed: false},
     {id: 2, title: 'clean', completed: false},
     {id: 3, title: 'study react', completed: true},
@@ -19,4 +19,11 @@ export const addTodos = async(title: string): Promise<ToDo> => {
     toDos.push(newToDo);
     
     return newToDo;
+}
+
+export const updateTodo = async (todoToUpdate:ToDo): Promise<ToDo> => {
+    const newToDos = toDos.map(td => td.id === todoToUpdate.id ? todoToUpdate : td);
+    toDos = newToDos;
+
+    return todoToUpdate;
 }
