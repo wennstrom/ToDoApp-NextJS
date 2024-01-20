@@ -39,7 +39,7 @@
   }
   
   /* On mouse-over, add a grey background color */
-  .todoContainer:hover input ~ .todoCheckmark {
+  .todoContainer:hover input ~ .checkmark {
     background-color: #ccc;
   }
   
