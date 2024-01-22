@@ -2,7 +2,7 @@
 import { ToDo as ToDoEntity } from "../entities/todo"
 import styles from '../page.module.css'
 import { updateTodo } from "../api/todos"
-import { useQueryClient, useMutation } from '@tanstack/react-query'
+import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query'
 
 
 interface PropTypes {
@@ -12,18 +12,17 @@ interface PropTypes {
 export default function ToDo({todo}: PropTypes) {
     const queryClient = useQueryClient()
 
-    const update = (completed: boolean) => {
-        todo.completed = completed;
-        mutation.mutate(todo);
-    }
-
     const mutation = useMutation({
         mutationFn: updateTodo,
         onSuccess: () => {
           queryClient.invalidateQueries({ queryKey: ['todos'] })
         },
       })
-    
+      
+      const update = (completed: boolean) => {
+        todo.completed = completed;
+        mutation.mutate(todo);
+    }
 
     return (
         <li className={todo.completed ? styles.completed : ''}>

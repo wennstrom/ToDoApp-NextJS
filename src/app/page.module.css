@@ -59,7 +59,18 @@
   .todoContainer input:checked ~ .todoCheckmark:after {
     display: block;
   }
-  
+  .todoInput {
+    width: 100%;
+    border: none;
+    background-color: #eee;
+    padding-left: 6px;
+    font-size: 22px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .todoInput:focus, .todoInput:focus{
+    outline: none;
+}
   /* Style the todoCheckmark/indicator */
   .todoContainer .todoCheckmark:after {
     left: 9px;
