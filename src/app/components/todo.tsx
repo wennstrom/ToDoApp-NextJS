@@ -2,7 +2,7 @@
 import { ToDo as ToDoEntity } from "../entities/todo"
 import styles from '../page.module.css'
 import { updateTodo } from "../api/todos"
-import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query'
+import { useQueryClient, useMutation } from '@tanstack/react-query'
 
 
 interface PropTypes {
